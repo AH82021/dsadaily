@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.stream.IntStream;
+
 public class Sol11 {
     /**
      Find the duplicate element in a limited range array
@@ -34,7 +37,18 @@ public class Sol11 {
         return duplicate;
     }
     public static void main(String[] args) {
-      int[] array = {1, 2, 3, 4, 4};
+      int[] array = {1, 2, 3, 3, 4};
         System.out.println("The duplicate element is : "+findDuplictate(array));
+        System.out.println("The duplicate element is : "+findDuplicate2(array));
+    }
+
+    //using difference in sum
+    public static int findDuplicate2(int[] nums)
+    {
+        //find sum of array using java 8
+     int actual_sum = Arrays.stream(nums).sum();
+     int expected_sum = Arrays.stream(nums).distinct().sum();
+
+        return  expected_sum - actual_sum;
     }
 }

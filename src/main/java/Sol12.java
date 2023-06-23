@@ -51,9 +51,9 @@ public class Sol12 {
 
     public static void main(String[] args)
     {
-        int[] A = { 1, 2, 3 };
-        int k = 2;
 
+        int[] A = { 1, 2, 3,4 };
+        int k = 3;
         // process elements from left to right
         System.out.println(findCombinations(A, k));
     }
